@@ -11,6 +11,17 @@ ollama pull llama3.1:latest
 python src/run.py
 ```
 
+## Dashboard
+
+Install the interface dependencies and launch the local results dashboard:
+
+```bash
+python -m pip install -r requirements.txt
+streamlit run app.py
+```
+
+The dashboard reads the committed CSV and JSONL files; it does not call a model. It includes the overview metrics, category breakdown, item explorer, error analysis, protocol, and known limitations. The current repository contains only the local Ollama baseline, so the two API model slots remain explicitly marked as pending.
+
 The runner makes one sequential local call per item and writes `results/per_item.csv`, `results/summary.csv`, and `results/hardware.md`. It uses temperature 0 and a fixed JSON output format. Set `OLLAMA_MODEL` to use another locally installed model.
 
 ## Task and data
