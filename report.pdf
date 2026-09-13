@@ -1,0 +1,127 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R >> >> /Contents 7 0 R >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Length 1336 >>
+stream
+BT
+/F1 11 Tf
+50 750 Td
+(Project 0 - Legal Clause Classification) Tj
+0 -16 Td
+(Local Ollama baseline | 13 September 2026) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Task and data) Tj
+0 -16 Td
+(Binary classification: does a contract clause contain the named legal category?) Tj
+0 -16 Td
+(The supplied category_descriptions.csv defines categories but has no clauses or labels.) Tj
+0 -16 Td
+(This run uses 50 synthetic clauses derived from those definitions, balanced Yes/No.) Tj
+0 -16 Td
+(Example: Audit Rights - Customer may audit Supplier records - expected Yes.) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Setup) Tj
+0 -16 Td
+(Model: Ollama llama3.1:latest, 8.0B parameters, Q4_K_M quantization.) Tj
+0 -16 Td
+(Host CPU: AMD Ryzen 7 7700. Temperature 0; one sequential call per item.) Tj
+0 -16 Td
+(API models are pending credentials.) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Results) Tj
+0 -16 Td
+(Model: llama3.1:latest) Tj
+0 -16 Td
+(Correct: 42/50 | Accuracy: 84% | Parse errors: 0 | Timeouts: 0) Tj
+0 -16 Td
+(p50 latency: 2088.49 ms | p95 latency: 2108.35 ms | Output: 0.69 tok/s) Tj
+0 -16 Td
+(Self-hosted estimate: $2.50 per 1,000 requests \(assumption marked below\).) Tj
+0 -16 Td
+(First three wrong answers: Non-Compete 002; Exclusivity 004; No-Solicit Customers 006.) Tj
+0 -16 Td
+(All eight errors were false negatives; no parse errors or timeouts occurred.) Tj
+0 -16 Td
+ET
+
+endstream
+endobj
+7 0 obj
+<< /Length 1276 >>
+stream
+BT
+/F1 11 Tf
+50 750 Td
+(Choice and operating economics) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(There is not yet a three-model choice because the API models are pending credentials.) Tj
+0 -16 Td
+(For the current offline requirement, choose llama3.1:latest: it is local and scored 84%.) Tj
+0 -16 Td
+(Change the choice if an API model materially improves accuracy or p95 at acceptable cost,) Tj
+0 -16 Td
+(or if evaluation on real clauses shows unacceptable false negatives.) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(At 100 times this 50-item run, the current estimate is $12.50 for 5,000 requests.) Tj
+0 -16 Td
+(The estimate assumes $0.30/hour and 120 requests/hour.) Tj
+0 -16 Td
+(GPU, memory, power, and measured hourly cost still need to be recorded.) Tj
+0 -16 Td
+(API break-even cannot be calculated until API prices and token usage are available.) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Limitations and next steps) Tj
+0 -16 Td
+(This is a local pipeline baseline, not a final three-model bake-off.) Tj
+0 -16 Td
+(Use 50+ independently sourced contract clauses and have two people verify each label.) Tj
+0 -16 Td
+(Run the same prompt and items on the top and cheap API models when keys are available.) Tj
+0 -16 Td
+(Record exact model names, dates, hardware, measured costs, and update the report.) Tj
+0 -16 Td
+ET
+
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000247 00000 n 
+0000000373 00000 n 
+0000000443 00000 n 
+0000001831 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+3159
+%%EOF

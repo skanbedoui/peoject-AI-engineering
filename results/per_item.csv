@@ -1,0 +1,51 @@
+id,category,expected,output,parsed,correct,status,error,latency_ms,input_tokens,output_tokens
+001,Non-Compete,Yes,Yes,Yes,True,ok,,41536.09,116,2
+002,Non-Compete,No,Yes,Yes,False,ok,,2089.47,121,2
+003,Exclusivity,Yes,Yes,Yes,True,ok,,2093.01,108,2
+004,Exclusivity,No,Yes,Yes,False,ok,,2105.61,108,2
+005,No-Solicit of Customers,Yes,Yes,Yes,True,ok,,2099.01,115,2
+006,No-Solicit of Customers,No,Yes,Yes,False,ok,,2080.04,110,2
+007,No-Solicit of Employees,Yes,Yes,Yes,True,ok,,2088.46,109,2
+008,No-Solicit of Employees,No,No,No,True,ok,,2080.90,112,2
+009,Non-Disparagement,Yes,Yes,Yes,True,ok,,2092.32,107,2
+010,Non-Disparagement,No,Yes,Yes,False,ok,,2078.72,102,2
+011,Termination for Convenience,Yes,Yes,Yes,True,ok,,2109.14,110,2
+012,Termination for Convenience,No,No,No,True,ok,,2096.98,107,2
+013,Change of Control,Yes,Yes,Yes,True,ok,,2088.31,117,2
+014,Change of Control,No,Yes,Yes,False,ok,,2073.75,116,2
+015,Anti-Assignment,Yes,Yes,Yes,True,ok,,2091.56,104,2
+016,Anti-Assignment,No,No,No,True,ok,,2084.32,104,2
+017,Revenue/Profit Sharing,Yes,Yes,Yes,True,ok,,2087.00,106,2
+018,Revenue/Profit Sharing,No,No,No,True,ok,,2086.43,105,2
+019,Price Restrictions,Yes,Yes,Yes,True,ok,,2097.15,105,2
+020,Price Restrictions,No,Yes,Yes,False,ok,,2078.54,104,2
+021,Minimum Commitment,Yes,Yes,Yes,True,ok,,2087.78,109,2
+022,Minimum Commitment,No,Yes,Yes,False,ok,,2084.79,106,2
+023,Volume Restriction,Yes,Yes,Yes,True,ok,,2094.53,111,2
+024,Volume Restriction,No,No,No,True,ok,,2072.58,108,2
+025,IP Ownership Assignment,Yes,Yes,Yes,True,ok,,2086.43,108,2
+026,IP Ownership Assignment,No,No,No,True,ok,,2085.15,101,2
+027,Joint IP Ownership,Yes,Yes,Yes,True,ok,,2086.41,101,2
+028,Joint IP Ownership,No,No,No,True,ok,,2080.14,105,2
+029,License Grant,Yes,Yes,Yes,True,ok,,2087.45,102,2
+030,License Grant,No,No,No,True,ok,,2073.32,102,2
+031,Non-Transferable License,Yes,Yes,Yes,True,ok,,2090.25,107,2
+032,Non-Transferable License,No,No,No,True,ok,,2097.18,101,2
+033,Unlimited/All-You-Can-Eat-License,Yes,Yes,Yes,True,ok,,2105.87,112,2
+034,Unlimited/All-You-Can-Eat-License,No,No,No,True,ok,,2100.73,112,2
+035,Irrevocable or Perpetual License,Yes,Yes,Yes,True,ok,,2088.94,116,2
+036,Irrevocable or Perpetual License,No,No,No,True,ok,,2093.97,107,2
+037,Source Code Escrow,Yes,Yes,Yes,True,ok,,2088.51,113,2
+038,Source Code Escrow,No,No,No,True,ok,,2080.27,110,2
+039,Post-Termination Services,Yes,Yes,Yes,True,ok,,2110.32,116,2
+040,Post-Termination Services,No,No,No,True,ok,,2092.43,116,2
+041,Audit Rights,Yes,Yes,Yes,True,ok,,2076.64,109,2
+042,Audit Rights,No,Yes,Yes,False,ok,,2091.05,111,2
+043,Uncapped Liability,Yes,Yes,Yes,True,ok,,2082.81,113,2
+044,Uncapped Liability,No,No,No,True,ok,,2096.61,113,2
+045,Cap on Liability,Yes,Yes,Yes,True,ok,,2087.24,111,2
+046,Cap on Liability,No,No,No,True,ok,,2093.38,104,2
+047,Liquidated Damages,Yes,Yes,Yes,True,ok,,2082.81,113,2
+048,Liquidated Damages,No,No,No,True,ok,,2077.80,105,2
+049,Insurance,Yes,Yes,Yes,True,ok,,2107.38,107,2
+050,Insurance,No,No,No,True,ok,,2105.29,104,2

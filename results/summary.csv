@@ -1,0 +1,2 @@
+model,run_date_utc,items,correct,accuracy,parse_errors,timeouts,p50_latency_ms,p95_latency_ms,output_tokens_per_second,self_hosted_cost_per_1000_requests_assumption_usd,self_hosted_cost_at_100x_traffic_usd
+llama3.1:latest,2026-09-13T14:37:50.642076+00:00,50,42,0.84,0,0,2088.49,2108.35,0.69,2.5,12.5
