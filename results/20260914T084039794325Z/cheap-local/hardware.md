@@ -1,6 +1,6 @@
 # Hardware note
 
-Model: llama3.1:latest
+Model: llama3.2:1b
 
 OS: Windows-11-10.0.26200-SP0
 
@@ -12,7 +12,7 @@ Total RAM: Unavailable
 
 GPU / VRAM (NVIDIA detection): NVIDIA GeForce RTX 4060 Laptop GPU, 8188 MiB
 
-Measured requests/hour: 684.40
+Measured requests/hour: 1364.01
 
 Hardware USD/hour: Unavailable
 

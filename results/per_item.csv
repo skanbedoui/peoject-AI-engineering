@@ -1,51 +1,51 @@
-id,category,expected,output,parsed,correct,status,error,latency_ms,input_tokens,output_tokens
-001,Non-Compete,Yes,Yes,Yes,True,ok,,41536.09,116,2
-002,Non-Compete,No,Yes,Yes,False,ok,,2089.47,121,2
-003,Exclusivity,Yes,Yes,Yes,True,ok,,2093.01,108,2
-004,Exclusivity,No,Yes,Yes,False,ok,,2105.61,108,2
-005,No-Solicit of Customers,Yes,Yes,Yes,True,ok,,2099.01,115,2
-006,No-Solicit of Customers,No,Yes,Yes,False,ok,,2080.04,110,2
-007,No-Solicit of Employees,Yes,Yes,Yes,True,ok,,2088.46,109,2
-008,No-Solicit of Employees,No,No,No,True,ok,,2080.90,112,2
-009,Non-Disparagement,Yes,Yes,Yes,True,ok,,2092.32,107,2
-010,Non-Disparagement,No,Yes,Yes,False,ok,,2078.72,102,2
-011,Termination for Convenience,Yes,Yes,Yes,True,ok,,2109.14,110,2
-012,Termination for Convenience,No,No,No,True,ok,,2096.98,107,2
-013,Change of Control,Yes,Yes,Yes,True,ok,,2088.31,117,2
-014,Change of Control,No,Yes,Yes,False,ok,,2073.75,116,2
-015,Anti-Assignment,Yes,Yes,Yes,True,ok,,2091.56,104,2
-016,Anti-Assignment,No,No,No,True,ok,,2084.32,104,2
-017,Revenue/Profit Sharing,Yes,Yes,Yes,True,ok,,2087.00,106,2
-018,Revenue/Profit Sharing,No,No,No,True,ok,,2086.43,105,2
-019,Price Restrictions,Yes,Yes,Yes,True,ok,,2097.15,105,2
-020,Price Restrictions,No,Yes,Yes,False,ok,,2078.54,104,2
-021,Minimum Commitment,Yes,Yes,Yes,True,ok,,2087.78,109,2
-022,Minimum Commitment,No,Yes,Yes,False,ok,,2084.79,106,2
-023,Volume Restriction,Yes,Yes,Yes,True,ok,,2094.53,111,2
-024,Volume Restriction,No,No,No,True,ok,,2072.58,108,2
-025,IP Ownership Assignment,Yes,Yes,Yes,True,ok,,2086.43,108,2
-026,IP Ownership Assignment,No,No,No,True,ok,,2085.15,101,2
-027,Joint IP Ownership,Yes,Yes,Yes,True,ok,,2086.41,101,2
-028,Joint IP Ownership,No,No,No,True,ok,,2080.14,105,2
-029,License Grant,Yes,Yes,Yes,True,ok,,2087.45,102,2
-030,License Grant,No,No,No,True,ok,,2073.32,102,2
-031,Non-Transferable License,Yes,Yes,Yes,True,ok,,2090.25,107,2
-032,Non-Transferable License,No,No,No,True,ok,,2097.18,101,2
-033,Unlimited/All-You-Can-Eat-License,Yes,Yes,Yes,True,ok,,2105.87,112,2
-034,Unlimited/All-You-Can-Eat-License,No,No,No,True,ok,,2100.73,112,2
-035,Irrevocable or Perpetual License,Yes,Yes,Yes,True,ok,,2088.94,116,2
-036,Irrevocable or Perpetual License,No,No,No,True,ok,,2093.97,107,2
-037,Source Code Escrow,Yes,Yes,Yes,True,ok,,2088.51,113,2
-038,Source Code Escrow,No,No,No,True,ok,,2080.27,110,2
-039,Post-Termination Services,Yes,Yes,Yes,True,ok,,2110.32,116,2
-040,Post-Termination Services,No,No,No,True,ok,,2092.43,116,2
-041,Audit Rights,Yes,Yes,Yes,True,ok,,2076.64,109,2
-042,Audit Rights,No,Yes,Yes,False,ok,,2091.05,111,2
-043,Uncapped Liability,Yes,Yes,Yes,True,ok,,2082.81,113,2
-044,Uncapped Liability,No,No,No,True,ok,,2096.61,113,2
-045,Cap on Liability,Yes,Yes,Yes,True,ok,,2087.24,111,2
-046,Cap on Liability,No,No,No,True,ok,,2093.38,104,2
-047,Liquidated Damages,Yes,Yes,Yes,True,ok,,2082.81,113,2
-048,Liquidated Damages,No,No,No,True,ok,,2077.80,105,2
-049,Insurance,Yes,Yes,Yes,True,ok,,2107.38,107,2
-050,Insurance,No,No,No,True,ok,,2105.29,104,2
+id,expected,output,parsed,correct,status,error,latency_ms,input_tokens,output_tokens,eval_count,eval_duration,eval_duration_ms,generation_tokens_per_second
+001,Non-Compete,Non-Compete,Non-Compete,True,ok,,149640.28289998532,991,5,5,5461400000,5461.4,0.9155161680155272
+002,Non-Compete,Non-Compete,Non-Compete,True,ok,,2312.611300003482,994,5,5,137021000,137.021,36.49075689127944
+003,Exclusivity,Exclusivity,Exclusivity,True,ok,,2352.8537999955006,987,4,4,155317000,155.317,25.75378097696968
+004,Exclusivity,Exclusivity,Exclusivity,True,ok,,2263.047100015683,990,4,4,107713000,107.713,37.13572177917243
+005,No-Solicit of Customers,No-Solicit of Customers,No-Solicit of Customers,True,ok,,2379.3754000216722,987,6,6,222093000,222.093,27.015709635152838
+006,No-Solicit of Customers,No-Solicit of Customers,No-Solicit of Customers,True,ok,,2362.6465999986976,987,6,6,184676000,184.676,32.48933266910698
+007,No-Solicit of Employees,No-Solicit of Employees,No-Solicit of Employees,True,ok,,2354.918800003361,989,6,6,187438000,187.438,32.010584833384904
+008,No-Solicit of Employees,No-Solicit of Employees,No-Solicit of Employees,True,ok,,2359.9267000099644,989,6,6,178062000,178.062,33.69612831485662
+009,Non-Disparagement,Non-Disparagement,Non-Disparagement,True,ok,,2300.00960000325,987,6,6,164959000,164.959,36.37267442212914
+010,Non-Disparagement,Non-Disparagement,Non-Disparagement,True,ok,,2371.897299977718,988,6,6,214406000,214.406,27.9842914843801
+011,Termination for Convenience,Termination for Convenience,Termination for Convenience,True,ok,,2270.3852000122424,989,5,5,130615000,130.615,38.28044252191555
+012,Termination for Convenience,Termination for Convenience,Termination for Convenience,True,ok,,2360.637300007511,990,5,5,177670000,177.67,28.142061124556765
+013,Change of Control,Change of Control,Change of Control,True,ok,,2284.616000019014,992,4,4,131001000,131.001,30.53411806016748
+014,Change of Control,Change of Control,Change of Control,True,ok,,2288.8452999759465,991,4,4,133436000,133.436,29.976917773314547
+015,Anti-Assignment,Anti-Assignment,Anti-Assignment,True,ok,,2282.186600001296,991,4,4,112554000,112.554,35.53849707695861
+016,Anti-Assignment,Anti-Assignment,Anti-Assignment,True,ok,,2314.749600016512,992,4,4,146796000,146.796,27.248698874628733
+017,Revenue/Profit Sharing,Revenue/Profit Sharing,Revenue/Profit Sharing,True,ok,,2307.3923000192735,988,5,5,144911000,144.911,34.5039368992002
+018,Revenue/Profit Sharing,Revenue/Profit Sharing,Revenue/Profit Sharing,True,ok,,2329.4433999981266,986,5,5,163331000,163.331,30.612682221990926
+019,Price Restrictions,Price Restrictions,Price Restrictions,True,ok,,2242.4300000129733,991,3,3,94406000,94.406,31.77764125161536
+020,Price Restrictions,Price Restrictions,Price Restrictions,True,ok,,2271.6104999999516,987,3,3,108016000,108.016,27.773663161013182
+021,Minimum Commitment,Minimum Commitment,Minimum Commitment,True,ok,,2288.583400018979,986,4,4,124866000,124.866,32.03434081335191
+022,Minimum Commitment,Minimum Commitment,Minimum Commitment,True,ok,,2338.3927999821026,988,4,4,162344000,162.344,24.63903809195289
+023,Volume Restriction,Volume Restriction,Volume Restriction,True,ok,,2297.3720000009052,989,4,4,119151000,119.151,33.570847076398856
+024,Volume Restriction,Volume Restriction,Volume Restriction,True,ok,,2324.3411000003107,987,4,4,144298000,144.298,27.72041192532121
+025,IP Ownership Assignment,IP Ownership Assignment,IP Ownership Assignment,True,ok,,2255.3559000079986,988,4,4,104603000,104.603,38.23982103763754
+026,IP Ownership Assignment,IP Ownership Assignment,IP Ownership Assignment,True,ok,,2314.076400012709,987,4,4,159177000,159.177,25.12925862404744
+027,Joint IP Ownership,Joint IP Ownership,Joint IP Ownership,True,ok,,2290.257399989059,987,4,4,122021000,122.021,32.78124257299973
+028,Joint IP Ownership,Joint IP Ownership,Joint IP Ownership,True,ok,,2323.1577000115067,991,4,4,149763000,149.763,26.708866676014768
+029,License Grant,License Grant,License Grant,True,ok,,2224.1451000154484,987,3,3,80203000,80.203,37.405084597833
+030,License Grant,License Grant,License Grant,True,ok,,2296.4108000160195,986,3,3,118012000,118.012,25.42114361251398
+031,Non-Transferable License,Non-Transferable License,Non-Transferable License,True,ok,,2360.17540001194,991,6,6,191981000,191.981,31.253092753970442
+032,Non-Transferable License,Non-Transferable License,Non-Transferable License,True,ok,,2328.318299987586,987,6,6,186095000,186.095,32.24159703377307
+033,Unlimited/All-You-Can-Eat-License,Unlimited/All-You-Can-Eat-License,Unlimited/All-You-Can-Eat-License,True,ok,,2502.197399997385,989,12,12,342068000,342.068,35.08074417951986
+034,Unlimited/All-You-Can-Eat-License,Unlimited/All-You-Can-Eat-License,Unlimited/All-You-Can-Eat-License,True,ok,,2485.592100012582,986,12,12,322109000,322.109,37.25446976023645
+035,Irrevocable or Perpetual License,Irrevocable or Perpetual License,Irrevocable or Perpetual License,True,ok,,2410.3299000125844,987,10,10,280876000,280.876,35.60289950013529
+036,Irrevocable or Perpetual License,Irrevocable or Perpetual License,Irrevocable or Perpetual License,True,ok,,2444.449500006158,985,10,10,300456000,300.456,33.28274356311739
+037,Source Code Escrow,Source Code Escrow,Source Code Escrow,True,ok,,2341.273400001228,994,5,5,148871000,148.871,33.58612490008128
+038,Source Code Escrow,Source Code Escrow,Source Code Escrow,True,ok,,2328.75299997977,997,5,5,157418000,157.418,31.762568448335006
+039,Post-Termination Services,Post-Termination Services,Post-Termination Services,True,ok,,2348.8752000266686,991,6,6,189763000,189.763,31.61838714607168
+040,Post-Termination Services,Post-Termination Services,Post-Termination Services,True,ok,,2349.469599983422,990,6,6,195131000,195.131,30.748574034879134
+041,Audit Rights,Audit Rights,Audit Rights,True,ok,,2153.726699994877,989,3,3,54124000,54.124,55.428275811100434
+042,Audit Rights,Audit Rights,Audit Rights,True,ok,,2164.744299981976,990,3,3,53262000,53.262,56.32533513574406
+043,Uncapped Liability,Uncapped Liability,Uncapped Liability,True,ok,,2216.9510000094306,984,4,4,100926000,100.926,39.632998434496564
+044,Uncapped Liability,Uncapped Liability,Uncapped Liability,True,ok,,2291.523599997163,992,4,4,113528000,113.528,35.23359875977732
+045,Cap on Liability,Cap on Liability,Cap on Liability,True,ok,,2296.5572999964934,992,4,4,139270000,139.27,28.72118905722697
+046,Cap on Liability,Cap on Liability,Cap on Liability,True,ok,,2193.2986000028905,989,4,4,77582000,77.582,51.55835116392978
+047,Liquidated Damages,Liquidated Damages,Liquidated Damages,True,ok,,2331.8365999730304,996,5,5,147559000,147.559,33.884751184272055
+048,Liquidated Damages,Liquidated Damages,Liquidated Damages,True,ok,,2356.3680999795906,992,5,5,160873000,160.873,31.08041747216749
+049,Insurance,Insurance,Insurance,True,ok,,2272.1692000050098,989,2,2,53206000,53.206,37.58974551742284
+050,Insurance,Insurance,Insurance,True,ok,,2205.6856999988668,992,2,2,41937000,41.937,47.69058349428905

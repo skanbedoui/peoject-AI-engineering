@@ -1,0 +1,51 @@
+id,expected,output,parsed,correct,status,error,latency_ms,input_tokens,output_tokens,eval_count,eval_duration,eval_duration_ms,generation_tokens_per_second
+001,Non-Compete,Non-Compete,Non-Compete,True,ok,,11185.883500002092,991,5,5,107344000,107.344,46.5792219406767
+002,Non-Compete,Non-Compete,Non-Compete,True,ok,,2330.9568999975454,994,5,5,173605000,173.605,28.801013795685606
+003,Exclusivity,Exclusivity,Exclusivity,True,ok,,2357.249299995601,987,4,4,164828000,164.828,24.267721503628024
+004,Exclusivity,Exclusivity,Exclusivity,True,ok,,2336.7063000041526,990,4,4,141626000,141.626,28.243401635292955
+005,No-Solicit of Customers,No-Solicit of Customers,No-Solicit of Customers,True,ok,,2390.8994999947026,987,6,6,117034000,117.034,51.267153134986415
+006,No-Solicit of Customers,No-Solicit of Customers,No-Solicit of Customers,True,ok,,2351.9524000003003,987,6,6,192542000,192.542,31.1620321799919
+007,No-Solicit of Employees,No-Solicit of Employees,No-Solicit of Employees,True,ok,,2401.669500017306,989,6,6,218361000,218.361,27.477434157198402
+008,No-Solicit of Employees,No-Solicit of Employees,No-Solicit of Employees,True,ok,,2392.713499983074,989,6,6,217267000,217.267,27.61579070912748
+009,Non-Disparagement,Non-Disparagement,Non-Disparagement,True,ok,,2384.867100015981,987,6,6,214177000,214.177,28.01421254383057
+010,Non-Disparagement,Non-Disparagement,Non-Disparagement,True,ok,,2410.7488000008743,988,6,6,214836000,214.836,27.928280176506732
+011,Termination for Convenience,Termination for Convenience,Termination for Convenience,True,ok,,2392.700900003547,989,5,5,172306000,172.306,29.01814214246747
+012,Termination for Convenience,Termination for Convenience,Termination for Convenience,True,ok,,2393.5884999809787,990,5,5,187184000,187.184,26.711684759381146
+013,Change of Control,Change of Control,Change of Control,True,ok,,2361.2177000031807,992,4,4,165879000,165.879,24.113962587187046
+014,Change of Control,Change of Control,Change of Control,True,ok,,2299.9716000049375,991,4,4,136980000,136.98,29.201343261790043
+015,Anti-Assignment,Anti-Assignment,Anti-Assignment,True,ok,,2339.0304999775253,991,4,4,82140000,82.14,48.69734599464329
+016,Anti-Assignment,Anti-Assignment,Anti-Assignment,True,ok,,2321.636100008618,992,4,4,145560000,145.56,27.480076944215444
+017,Revenue/Profit Sharing,Revenue/Profit Sharing,Revenue/Profit Sharing,True,ok,,2366.997800010722,988,5,5,170951000,170.951,29.248147129879325
+018,Revenue/Profit Sharing,Revenue/Profit Sharing,Revenue/Profit Sharing,True,ok,,2330.736400006572,986,5,5,153009000,153.009,32.67781633760106
+019,Price Restrictions,Price Restrictions,Price Restrictions,True,ok,,2155.221299995901,991,3,3,54227000,54.227,55.322994080439635
+020,Price Restrictions,Price Restrictions,Price Restrictions,True,ok,,2161.315100005595,987,3,3,49956000,49.956,60.05284650492433
+021,Minimum Commitment,Minimum Commitment,Minimum Commitment,True,ok,,2259.9961000087205,986,4,4,108732000,108.732,36.78769819372402
+022,Minimum Commitment,Minimum Commitment,Minimum Commitment,True,ok,,2401.5030000009574,988,4,4,69722000,69.722,57.37070078311006
+023,Volume Restriction,Volume Restriction,Volume Restriction,True,ok,,2310.4578999918886,989,4,4,142889000,142.889,27.993757392101564
+024,Volume Restriction,Volume Restriction,Volume Restriction,True,ok,,2332.4769999890123,987,4,4,140616000,140.616,28.446265005404793
+025,IP Ownership Assignment,IP Ownership Assignment,IP Ownership Assignment,True,ok,,2358.2025000068825,988,4,4,68525000,68.525,58.37285662167092
+026,IP Ownership Assignment,IP Ownership Assignment,IP Ownership Assignment,True,ok,,2352.1109000139404,987,4,4,161997000,161.997,24.691815280529887
+027,Joint IP Ownership,Joint IP Ownership,Joint IP Ownership,True,ok,,2330.245899996953,987,4,4,157798000,157.798,25.34886373718298
+028,Joint IP Ownership,Joint IP Ownership,Joint IP Ownership,True,ok,,2333.1268000183627,991,4,4,132131000,132.131,30.272986657181132
+029,License Grant,License Grant,License Grant,True,ok,,2347.177899995586,987,3,3,67698000,67.698,44.31445537534344
+030,License Grant,License Grant,License Grant,True,ok,,2267.703099991195,986,3,3,104984000,104.984,28.575782976453556
+031,Non-Transferable License,Non-Transferable License,Non-Transferable License,True,ok,,2406.222300021909,991,6,6,111648000,111.648,53.740326741186585
+032,Non-Transferable License,Non-Transferable License,Non-Transferable License,True,ok,,2365.2307000011206,987,6,6,193504000,193.504,31.007110964114435
+033,Unlimited/All-You-Can-Eat-License,Unlimited/All-You-Can-Eat-License,Unlimited/All-You-Can-Eat-License,True,ok,,2476.9047999870963,989,12,12,339219000,339.219,35.37537696886083
+034,Unlimited/All-You-Can-Eat-License,Unlimited/All-You-Can-Eat-License,Unlimited/All-You-Can-Eat-License,True,ok,,2559.60559999221,986,12,12,372330000,372.33,32.22947385383934
+035,Irrevocable or Perpetual License,Irrevocable or Perpetual License,Irrevocable or Perpetual License,True,ok,,2458.1845000211615,987,10,10,279426000,279.426,35.78765039760079
+036,Irrevocable or Perpetual License,Irrevocable or Perpetual License,Irrevocable or Perpetual License,True,ok,,2503.5975000064354,985,10,10,319896000,319.896,31.26015955185435
+037,Source Code Escrow,Source Code Escrow,Source Code Escrow,True,ok,,2357.827100000577,994,5,5,174306000,174.306,28.685185822633763
+038,Source Code Escrow,Source Code Escrow,Source Code Escrow,True,ok,,2380.7755000016186,997,5,5,188109000,188.109,26.580333742670472
+039,Post-Termination Services,Post-Termination Services,Post-Termination Services,True,ok,,2416.2004999816418,991,6,6,229876000,229.876,26.101028380518194
+040,Post-Termination Services,Post-Termination Services,Post-Termination Services,True,ok,,2396.306699985871,990,6,6,222187000,222.187,27.00428017840828
+041,Audit Rights,Audit Rights,Audit Rights,True,ok,,2296.1548999883235,989,3,3,105967000,105.967,28.310700501099397
+042,Audit Rights,Audit Rights,Audit Rights,True,ok,,2294.7453999950085,990,3,3,96579000,96.579,31.062653371851024
+043,Uncapped Liability,Uncapped Liability,Uncapped Liability,True,ok,,2329.899200005457,984,4,4,156033000,156.033,25.63560272506457
+044,Uncapped Liability,Uncapped Liability,Uncapped Liability,True,ok,,2315.043800015701,992,4,4,126555000,126.555,31.606811267828217
+045,Cap on Liability,Cap on Liability,Cap on Liability,True,ok,,2375.302999978885,992,4,4,97710000,97.71,40.93746801760311
+046,Cap on Liability,Cap on Liability,Cap on Liability,True,ok,,2319.865800003754,989,4,4,140238000,140.238,28.522939574152513
+047,Liquidated Damages,Liquidated Damages,Liquidated Damages,True,ok,,2380.16709999647,996,5,5,163114000,163.114,30.65340804590654
+048,Liquidated Damages,Liquidated Damages,Liquidated Damages,True,ok,,2370.949100004509,992,5,5,166615000,166.615,30.009302883894005
+049,Insurance,Insurance,Insurance,True,ok,,2289.0141000098083,989,2,2,26417000,26.417,75.70882386342129
+050,Insurance,Insurance,Insurance,True,ok,,2247.335199994268,992,2,2,54871000,54.871,36.44912613220098

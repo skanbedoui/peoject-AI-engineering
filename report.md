@@ -1,25 +1,123 @@
-# Project 0 - Legal Clause Classification
+# Legal Clause Classification
 
-## Task and data
+## Project 0 - Experiment Report
 
-The task is binary legal-clause classification: given a category definition and one contract clause, decide whether the clause contains that category. The supplied `category_descriptions.csv` defines 45 categories but contains no contract clauses or labels. For this local pipeline run, 50 short synthetic clauses were constructed from those definitions, balanced between Yes and No. Labels are clear by construction but are not a substitute for two-person labeling of real contracts.
+**Experiment date:** September 14, 2026  
+**Status:** Local comparison completed; final-data and API evaluation pending.
 
-Example: category `Audit Rights`, clause `Customer may audit Supplier's relevant books and records once each year`, expected answer `Yes`.
+## 1. Objective and Scope
 
-## Setup
+Given one legal contract clause and the complete category catalogue, return exactly one allowed category name. The experiment compares three local Ollama models under the same prompt and scoring rules. It replaces the original binary Yes/No task, which supplied the candidate label.
 
-The evaluated open-weights model was local Ollama `llama3.1:latest`, Llama architecture, 8.0B parameters, Q4_K_M quantization. Every item used the same system prompt, category definition, clause, parser, temperature 0, and one sequential model call. The host CPU was AMD Ryzen 7 7700. API models were not run because API keys are not available yet.
+**Example:** "Either party may terminate this Agreement without cause upon thirty days' written notice."  
+**Expected label:** `Termination for Convenience`.
 
-## Results
+This is a synthetic development benchmark, not evidence of real-world legal accuracy.
 
-| Model | Correct | Accuracy | Parse errors | Timeouts | p50 latency (ms) | p95 latency (ms) | Output tok/s | Self-hosted cost / 1k |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| llama3.1:latest | 42/50 | 84% | 0 | 0 | 2088.49 | 2108.35 | 0.69 | $2.50* |
+## 2. Data and Labeling
 
-The first three wrong answers were false negatives: Non-Compete item 002, Exclusivity item 004, and No-Solicit of Customers item 006. Five additional false negatives occurred in items 010, 014, 020, 022, and 042. No parse errors or timeouts occurred.
+The dataset contains **50 synthetic clauses across 25 categories**, with two examples per category. Each item has an ID, clause, expected label, and source. Definitions are loaded from `category_descriptions.csv`; the selected category names are maintained in `src/prompt.py`.
 
-## Choice and cost
+Metadata and extraction fields, including parties, dates, governing law, and warranty duration, are excluded. Clauses express one intended provision. When a specialized license provision overlaps a generic grant, the most specific expressed category takes precedence. This convention simplifies a domain that is often multilabel in practice.
 
-There is not yet a three-model choice because the two API models are pending credentials. For the current offline requirement, I would choose `llama3.1:latest`: it is available locally, has no API dependency, and achieved 84% on this controlled set. I would change that choice if a tested API model materially improves accuracy or p95 latency at the target traffic and its cost is acceptable, or if the real-clause evaluation shows unacceptable false negatives.
+Validation checks the minimum item count, unique IDs, nonempty clauses, normalized duplicate clauses, valid expected labels, and at least two items per tested category. The current labels have not undergone independent two-person review. See [Labeling policy](data/LABELING.md).
 
-At 100 times this 50-item run, the current self-hosted assumption estimates $12.50 for 5,000 requests. The $2.50 per 1,000 estimate assumes $0.30/hour and 120 requests/hour; GPU, memory, power, and measured hourly cost still need to be recorded. API break-even volume cannot be calculated until API prices and measured token usage are available.
+## 3. Models and Protocol
+
+| Experiment role         | Ollama tag      | Parameters | Quantization |
+| ----------------------- | --------------- | ---------: | ------------ |
+| Baseline                | llama3.1:latest |       8.0B | Q4_K_M       |
+| Top-local replacement   | llama3.2:3b     |       3.2B | Q4_K_M       |
+| Cheap-local replacement | llama3.2:1b     |       1.2B | Q8_0         |
+
+The replacement roles temporarily occupy the planned API comparison slots. They do not imply API-equivalent quality or cost. The 3B replacement is smaller than the 8B baseline, and the experiment varies quantization as well as model size.
+
+Each model receives the same complete catalogue, definitions, and clause. Requests are sequential, with temperature 0, a 24-token output limit, a 180-second request timeout, and one call per item. There are no retries, warm-up calls, external judges, or prompt changes during the run.
+
+The parser trims surrounding whitespace and accepts only an exact, case-sensitive category name. Prefixes, extra punctuation, explanations, unknown labels, errors, and timeouts count as wrong.
+
+## 4. Measurement and Hardware
+
+Accuracy is correct predictions divided by all items. Latency is measured from sending a request until its full response arrives; failed requests retain elapsed time. The p50 and p95 values use linear interpolation over ordered latencies.
+
+Generation throughput is the sum of generated tokens divided by the sum of Ollama generation durations, converted from nanoseconds to seconds. Only matched available measurements are used. Requests/hour is based on elapsed time for each model's sequential benchmark loop, including result-writing overhead.
+
+The recorded host runs Windows 11, with 16 logical CPUs and a detected NVIDIA GeForce RTX 4060 Laptop GPU reporting 8188 MiB VRAM. Total RAM and the detailed CPU model were unavailable to automatic detection. GPU detection does not itself establish inference placement. Power draw and hourly cost were not measured.
+
+## 5. Measured Results
+
+Source run: `20260914T084039794325Z`. All **150 classification calls** completed.
+
+| Model           | Correct | Accuracy | Parse errors | Timeouts | Server errors |
+| --------------- | ------: | -------: | -----------: | -------: | ------------: |
+| llama3.1:latest |   50/50 |     100% |            0 |        0 |             0 |
+| llama3.2:3b     |   39/50 |      78% |            2 |        0 |             0 |
+| llama3.2:1b     |    5/50 |      10% |            0 |        0 |             0 |
+
+| Model           | p50 (ms) | p95 (ms) | Generation tok/s | Requests/hour |
+| --------------- | -------: | -------: | ---------------: | ------------: |
+| llama3.1:latest |  2332.31 |  2491.51 |            30.42 |       1413.93 |
+| llama3.2:3b     |  2251.68 |  2469.24 |            42.53 |       1491.06 |
+| llama3.2:1b     |  2189.76 |  2470.40 |            42.95 |       1364.01 |
+
+First-request latencies were 12.97, 9.44, and 20.52 seconds respectively. Model loading and prompt caching affect the comparison; the measured request rate is not a steady-state capacity estimate. Faster token generation did not produce a similarly large end-to-end latency improvement.
+
+The earlier standalone multiclass baseline also scored 50/50 and remains separately preserved. Its timings are not mixed into this table. The old binary result is not part of this experiment.
+
+## 6. Wrong-Answer Analysis
+
+The 8B baseline made no mistakes on this small synthetic set. This does not establish generalization.
+
+The 3B model made nine incorrect allowed-label predictions and two parse errors. Representative cases:
+
+| Item | Expected                    | Returned output             |
+| ---- | --------------------------- | --------------------------- |
+| 012  | Termination for Convenience | No-Solicit of Customers     |
+| 017  | Revenue/Profit Sharing      | Price Restrictions          |
+| 025  | IP Ownership Assignment     | Non-IP Ownership Assignment |
+| 029  | License Grant               | Non-Transferable License    |
+| 030  | License Grant               | Exclusivity                 |
+| 046  | Cap on Liability            | Time Limit                  |
+
+Items 025 and 046 returned labels outside the catalogue. Both were rejected. The license-grant errors illustrate confusion between a general permission and a narrower contractual restriction.
+
+The 1B model made 45 incorrect allowed-label predictions. It repeatedly chose Non-Compete or Non-Transferable License for unrelated clauses. Zero parse errors therefore did not indicate semantic accuracy. The observations suggest poor performance under this catalogue and prompt; they do not prove the cause.
+
+## 7. Cost and Model Choice
+
+Self-hosted cost is **unavailable** because `LOCAL_HARDWARE_COST_PER_HOUR_USD` was not supplied. No monetary result is invented.
+
+- Cost per 1,000 requests = hourly hardware cost / measured requests per hour \* 1,000.
+- Cost at 100x benchmark traffic = cost per 1,000 \* 5 for this 50-item dataset.
+
+The calculation assumes the same sequential rate and hourly cost at 5,000 requests. It does not model concurrency, utilization, scaling, API pricing, or break-even.
+
+Retain **llama3.1:latest** for this development task. It achieved the highest measured accuracy with only a small median-latency disadvantage. The 3B and 1B models remain useful comparison baselines. A deployment decision requires independent real-clause evaluation and, when implemented, actual API comparisons.
+
+## 8. Limitations and Remaining Work
+
+- Replace or augment synthetic clauses with independently sourced real examples and documented provenance.
+- Have two people independently verify every final label and resolve disagreements.
+- Evaluate more examples per category and explicitly handle genuinely overlapping or out-of-catalogue clauses.
+- Repeat measurements with a documented startup/cache protocol before drawing capacity conclusions.
+- Record missing hardware details, power measurements, and the provenance of any hourly-cost assumption.
+- Implement the actual top and cheap API comparison later; current local replacements do not fulfill that comparison.
+- Historical runs lack a clause snapshot; the dashboard uses current dataset text for those runs. Future runs retain their own dataset and prompt catalogue.
+
+## 9. Reproduction and Evidence
+
+```powershell
+python src/run.py --validate-only
+python src/run.py --compare
+python src/dashboard.py --port 8080
+```
+
+The dashboard is read-only and visualizes saved CSVs. It does not call models or rescore answers.
+
+- [Comparison CSV](results/20260914T084039794325Z/comparison.csv)
+- [Model digests and metadata](results/20260914T084039794325Z/models.json)
+- [Baseline predictions](results/20260914T084039794325Z/baseline/per_item.csv)
+- [3B predictions](results/20260914T084039794325Z/top-local/per_item.csv)
+- [1B predictions](results/20260914T084039794325Z/cheap-local/per_item.csv)
+
+Per-model hardware notes and summaries sit beside the prediction files. Markdown is the editable source; the PDF exporter reads this document directly.

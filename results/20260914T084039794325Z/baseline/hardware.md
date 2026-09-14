@@ -12,7 +12,7 @@ Total RAM: Unavailable
 
 GPU / VRAM (NVIDIA detection): NVIDIA GeForce RTX 4060 Laptop GPU, 8188 MiB
 
-Measured requests/hour: 684.40
+Measured requests/hour: 1413.93
 
 Hardware USD/hour: Unavailable
 

@@ -1,2 +1,2 @@
 model,task,run_date_utc,items,categories,correct,accuracy,parse_errors,timeouts,errors,p50_latency_ms,p95_latency_ms,output_tokens_per_second,measured_requests_per_hour,max_output_tokens,self_hosted_cost_per_1000_requests_usd,self_hosted_cost_at_100x_traffic_usd
-llama3.1:latest,multiclass_legal_clause_classification,2026-09-14T08:27:44.072505+00:00,50,25,50,1.0,0,0,0,2314.4130000146106,2467.077930009691,19.228839786082258,684.4006257737682,24,,
+llama3.2:1b,multiclass_legal_clause_classification,2026-09-14T09:22:49.045242+00:00,50,25,5,0.1,0,0,0,2237.0840500079794,2457.669015004649,37.02963522953163,1532.6192802207106,24,,

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Clause / Model Observatory</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/" aria-label="Clause home"
+        ><span class="mark">C<span>.</span></span
+        ><strong>clause</strong><span class="brand-divider"></span
+        ><span class="muted">Model observatory</span></a
+      ><span class="local"><i></i> LOCAL OLLAMA</span>
+    </header>
+    <main>
+      <div class="heading">
+        <div>
+          <div class="eyebrow">CS496 / PROJECT 0</div>
+          <h1>One clause. Three perspectives.</h1>
+          <p class="muted">Legal clause classification benchmark</p>
+        </div>
+        <div class="run-control">
+          <label for="run">BENCHMARK RUN</label
+          ><select id="run" aria-label="Benchmark run"></select>
+        </div>
+      </div>
+      <div class="toolbar">
+        <nav aria-label="Dashboard views">
+          <button class="tab active" data-view="overview">Overview</button
+          ><button class="tab" data-view="explorer">Clause explorer</button>
+        </nav>
+        <button id="export" class="export" title="Download comparison CSV">
+          <span aria-hidden="true">↓</span> Export CSV
+        </button>
+      </div>
+      <div id="message" role="status">Loading benchmark results...</div>
+      <div id="content" hidden>
+        <div class="context">
+          <span><i class="dot"></i> Synthetic development set</span
+          ><span id="dataset-count"></span><span>25 allowed categories</span
+          ><span>Temperature 0</span><span>24-token limit</span>
+        </div>
+        <section id="overview">
+          <div id="model-cards" class="models"></div>
+          <div class="chart-layout">
+            <section class="plot">
+              <div class="section-title">
+                <div>
+                  <h2>Accuracy by model</h2>
+                  <p>Correct predictions / all test items</p>
+                </div>
+                <span class="unit">HIGHER IS BETTER</span>
+              </div>
+              <div id="accuracy-chart"></div>
+            </section>
+            <section class="plot">
+              <div class="section-title">
+                <div>
+                  <h2 id="metric-title">Response latency</h2>
+                  <p id="metric-subtitle">End-to-end request time</p>
+                </div>
+                <select id="metric" aria-label="Comparison metric">
+                  <option value="latency">Latency</option>
+                  <option value="throughput">Generation speed</option>
+                  <option value="requests">Requests / hour</option>
+                </select>
+              </div>
+              <div id="metric-chart"></div>
+            </section>
+          </div>
+          <section class="category-section">
+            <div class="section-title">
+              <div>
+                <h2>Category performance</h2>
+                <p>Correct predictions by intended category</p>
+              </div>
+              <div class="heat-legend">
+                <span>0%</span><i></i><i></i><i></i><span>100%</span>
+              </div>
+            </div>
+            <div id="category-grid" class="category-grid"></div>
+          </section>
+          <div class="note">
+            <strong>A development signal, not a legal accuracy claim.</strong>
+            These clauses are synthetic. Independently sourced data and
+            two-person label verification are still required. Latency includes
+            model startup; caching can affect comparisons. Hardware costs are
+            unavailable unless supplied.
+          </div>
+        </section>
+        <section id="explorer" hidden>
+          <div class="section-title">
+            <div>
+              <h2>Look inside the predictions</h2>
+              <p id="row-count"></p>
+            </div>
+          </div>
+          <div class="filters">
+            <input
+              id="search"
+              type="search"
+              placeholder="Search clause, category, or ID"
+              aria-label="Search clauses"
+            /><select id="category" aria-label="Category filter">
+              <option value="">All categories</option></select
+            ><select id="outcome" aria-label="Outcome filter">
+              <option value="all">All outcomes</option>
+              <option value="wrong">Any model incorrect</option>
+              <option value="correct">All models correct</option>
+              <option value="parse">Parse errors</option>
+            </select>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead id="table-head"></thead>
+              <tbody id="table-body"></tbody>
+            </table>
+          </div>
+          <div id="empty" hidden>No clauses match these filters.</div>
+        </section>
+      </div>
+      <footer>
+        <span>CLAUSE / BENCHMARK LAB</span
+        ><span id="run-foot">Local inference. Reproducible evidence.</span>
+      </footer>
+    </main>
+    <dialog id="detail">
+      <div class="dialog-top">
+        <span class="eyebrow" id="detail-id"></span
+        ><button id="close" aria-label="Close clause details" title="Close">
+          ×
+        </button>
+      </div>
+      <h2 id="detail-title"></h2>
+      <p id="detail-clause"></p>
+      <div id="detail-models"></div>
+    </dialog>
+    <script src="app.js"></script>
+  </body>
+</html>

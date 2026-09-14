@@ -1,0 +1,5 @@
+# Optional tooling only; benchmark and dashboard use the standard library.
+black==25.1.0
+markdown-it-py==3.0.0
+reportlab==4.4.3
+PyMuPDF==1.26.4
