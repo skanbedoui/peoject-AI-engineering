@@ -17,11 +17,11 @@ from urllib.parse import urlsplit, urlunsplit
 
 if __package__:
     from .cost import cost_at_traffic, hardware_hourly_cost, self_hosted_cost_per_1000
-    from .prompt import SYSTEM_PROMPT, build_prompt, load_categories
+    from .prompt import build_prompt, build_system_prompt, load_categories
     from .score import score
 else:
     from cost import cost_at_traffic, hardware_hourly_cost, self_hosted_cost_per_1000
-    from prompt import SYSTEM_PROMPT, build_prompt, load_categories
+    from prompt import build_prompt, build_system_prompt, load_categories
     from score import score
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -115,8 +115,8 @@ def call_ollama(item: dict, categories: dict[str, str], model: str = MODEL) -> d
         "model": model,
         "stream": False,
         "messages": [
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": build_prompt(item["clause"], categories)},
+            {"role": "system", "content": build_system_prompt(categories)},
+            {"role": "user", "content": build_prompt(item["clause"])},
         ],
         "options": {"temperature": 0, "num_predict": MAX_OUTPUT_TOKENS},
     }
@@ -368,7 +368,7 @@ def main() -> None:
     (destination / "protocol.json").write_text(
         json.dumps(
             {
-                "system_prompt": SYSTEM_PROMPT,
+                "system_prompt": build_system_prompt(categories),
                 "categories": categories,
                 "temperature": 0,
                 "max_output_tokens": MAX_OUTPUT_TOKENS,

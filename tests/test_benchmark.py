@@ -9,7 +9,7 @@ from unittest.mock import patch
 
 from src import run
 from src.cost import cost_at_traffic, self_hosted_cost_per_1000
-from src.prompt import load_categories
+from src.prompt import SYSTEM_PROMPT, build_prompt, build_system_prompt, load_categories
 from src.score import parse_answer
 
 
@@ -34,6 +34,19 @@ class BenchmarkTests(unittest.TestCase):
             "",
         ):
             self.assertIsNone(parse_answer(text, self.categories))
+
+    def test_prompts_use_one_global_catalogue(self):
+        system_prompt = build_system_prompt(self.categories)
+        prompt = build_prompt(self.items[0]["clause"])
+
+        self.assertIn("category catalogue", system_prompt)
+        self.assertIn("Compare the clause against the entire catalogue", system_prompt)
+        self.assertIn("single category", system_prompt)
+        for category in self.categories:
+            self.assertIn(category, SYSTEM_PROMPT)
+            self.assertIn(category, system_prompt)
+        self.assertIn(self.items[0]["clause"], prompt)
+        self.assertNotIn("category catalogue", prompt)
 
     def test_invalid_datasets(self):
         mutations = [
@@ -70,7 +83,8 @@ class BenchmarkTests(unittest.TestCase):
         self.assertEqual(payload["options"], {"temperature": 0, "num_predict": 24})
         self.assertEqual(request.call_args.kwargs["timeout"], 180)
         for category in self.categories:
-            self.assertIn(category, payload["messages"][1]["content"])
+            self.assertIn(category, payload["messages"][0]["content"])
+        self.assertNotIn("category catalogue", payload["messages"][1]["content"])
         second = dict(
             row, eval_count=12, eval_duration=3000000000, generation_tokens_per_second=4
         )
