@@ -32,7 +32,7 @@ Validation checks the minimum item count, unique IDs, nonempty clauses, normaliz
 
 The replacement roles temporarily occupy the planned API comparison slots. They do not imply API-equivalent quality or cost. The 3B replacement is smaller than the 8B baseline, and the experiment varies quantization as well as model size.
 
-Each model receives the same complete catalogue, definitions, and clause. Requests are sequential, with temperature 0, a 24-token output limit, a 180-second request timeout, and one call per item. There are no retries, warm-up calls, external judges, or prompt changes during the run.
+Each model receives the same complete catalogue, definitions, and clause. System prompt instructions incorporate a 1-shot output format example, targeted disambiguation boundary rules (e.g., distinguishing general License Grants from specific restrictions), few-shot guidance for related IP/assignment category pairs, and a mode-collapse default guard. Requests are sequential, with temperature 0, a 24-token output limit, a 180-second request timeout, and one call per item. There are no retries, warm-up calls, or external judges during the run.
 
 The parser trims surrounding whitespace and accepts only an exact, case-sensitive category name. Prefixes, extra punctuation, explanations, unknown labels, errors, and timeouts count as wrong.
 

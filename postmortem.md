@@ -9,13 +9,15 @@
 
 The first version asked whether a clause matched a supplied category and returned Yes or No. Supplying the candidate label made that task weaker as a genuine classification benchmark. The refactor asks the model to choose one label from the full catalogue.
 
-The project now validates 50 synthetic items across 25 categories, sends one sequential request per item, parses exact category names, and records per-item predictions plus aggregate measurements. Three local Llama models temporarily occupy the baseline, top-local, and cheap-local experiment roles.
+The project now validates 50 synthetic items across 25 categories, sends one sequential request per item, parses exact category names, and records per-item predictions plus aggregate measurements. The system prompt incorporates 1-shot output format guidance, contrastive boundary rules, hard-pair few-shot guidance, and a mode-collapse default guard. Three local Llama models temporarily occupy the baseline, top-local, and cheap-local experiment roles.
 
 A read-only dashboard makes the saved results inspectable through charts, category comparisons, filters, raw-output details, and CSV export. Separate run directories preserve evidence instead of overwriting the previous experiment.
 
 ## 2. What Worked
 
 **The pipeline exposed meaningful differences.** The 8B baseline scored 50/50, the 3B replacement 39/50, and the 1B replacement 5/50. All 150 calls completed without timeouts or server errors.
+
+**Prompt engineering targeted specific failure modes.** Incorporating 1-shot output formatting, contrastive boundary rules, hard-pair few-shot guidance, and a default guard directly addressed the output hallucinations and category confusion observed in smaller models.
 
 **Strict parsing made output failures visible.** The 3B model returned two labels outside the catalogue. They were recorded as parse errors and counted as wrong rather than accepted through a permissive substring match.
 
