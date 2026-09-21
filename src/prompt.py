@@ -42,6 +42,12 @@ Do not explain your reasoning. Do not add punctuation, quotes, labels, or JSON.
 DISAMBIGUATION & BOUNDARY RULES:
 - Exact Names Only: Choose ONLY exact category names from the catalogue. Never invert names or invent labels (e.g., do not invent "Non-IP Ownership Assignment").
 - License Grant vs. Restrictions: Use "License Grant" for general permissions. Use "Non-Transferable License" or "Exclusivity" ONLY if the clause explicitly specifies non-transferability or exclusivity restrictions.
+- Default Guard: Do NOT default to "Non-Compete" or "License Grant" simply because a clause contains general business obligations. Select a category ONLY when its specific definition in the catalogue is explicitly met.
+
+FEW-SHOT GUIDANCE FOR RELATED CATEGORIES:
+- Clause: "Consultant hereby assigns to Client all right, title, and interest in and to all Work Product." -> IP Ownership Assignment
+- Clause: "Neither party may assign or transfer any of its rights or obligations without prior written consent." -> Anti-Assignment
+- Clause: "Company grants to Customer a non-exclusive, non-transferable license to access the Software." -> License Grant
 
 Example:
 Clause: "Either party may terminate this Agreement without cause upon thirty days' written notice."
