@@ -1,7 +1,33 @@
 import csv
 from pathlib import Path
 
-
+SELECTED_CATEGORIES = (
+    "Non-Compete",
+    "Exclusivity",
+    "No-Solicit of Customers",
+    "No-Solicit of Employees",
+    "Non-Disparagement",
+    "Termination for Convenience",
+    "Change of Control",
+    "Anti-Assignment",
+    "Revenue/Profit Sharing",
+    "Price Restrictions",
+    "Minimum Commitment",
+    "Volume Restriction",
+    "IP Ownership Assignment",
+    "Joint IP Ownership",
+    "License Grant",
+    "Non-Transferable License",
+    "Unlimited/All-You-Can-Eat-License",
+    "Irrevocable or Perpetual License",
+    "Source Code Escrow",
+    "Post-Termination Services",
+    "Audit Rights",
+    "Uncapped Liability",
+    "Cap on Liability",
+    "Liquidated Damages",
+    "Insurance",
+)
 
 SYSTEM_PROMPT = """You are a precise legal contract clause classifier.
 You must choose from these selected categories only:
