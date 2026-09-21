@@ -1,34 +1,6 @@
 import csv
 from pathlib import Path
 
-SELECTED_CATEGORIES = (
-    "Non-Compete",
-    "Exclusivity",
-    "No-Solicit of Customers",
-    "No-Solicit of Employees",
-    "Non-Disparagement",
-    "Termination for Convenience",
-    "Change of Control",
-    "Anti-Assignment",
-    "Revenue/Profit Sharing",
-    "Price Restrictions",
-    "Minimum Commitment",
-    "Volume Restriction",
-    "IP Ownership Assignment",
-    "Joint IP Ownership",
-    "License Grant",
-    "Non-Transferable License",
-    "Unlimited/All-You-Can-Eat-License",
-    "Irrevocable or Perpetual License",
-    "Source Code Escrow",
-    "Post-Termination Services",
-    "Audit Rights",
-    "Uncapped Liability",
-    "Cap on Liability",
-    "Liquidated Damages",
-    "Insurance",
-)
-
 SYSTEM_PROMPT = """You are a precise legal contract clause classifier.
 You must choose from these selected categories only:
 - Non-Compete
@@ -75,6 +47,23 @@ Example:
 Clause: "Either party may terminate this Agreement without cause upon thirty days' written notice."
 Output: Termination for Convenience
 """
+
+
+def _extract_selected_categories(prompt: str) -> tuple[str, ...]:
+    lines = prompt.splitlines()
+    try:
+        start = lines.index("You must choose from these selected categories only:") + 1
+        end = lines.index("The category catalogue below contains these categories and their definitions.")
+        return tuple(
+            line.strip().lstrip("- ").strip()
+            for line in lines[start:end]
+            if line.strip().startswith("- ")
+        )
+    except ValueError:
+        return ()
+
+
+SELECTED_CATEGORIES = _extract_selected_categories(SYSTEM_PROMPT)
 
 
 def load_categories(path: Path) -> dict[str, str]:
