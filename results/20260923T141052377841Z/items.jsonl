@@ -1,0 +1,50 @@
+{"id": "001", "clause": "During the term, Consultant shall not operate a business competing with Client's payroll services.", "expected": "Non-Compete", "source": "synthetic"}
+{"id": "002", "clause": "For twelve months, Seller may not establish a rival dental practice within ten miles of the sold practice.", "expected": "Non-Compete", "source": "synthetic"}
+{"id": "003", "clause": "Buyer shall obtain all of its packaging requirements solely from Supplier.", "expected": "Exclusivity", "source": "synthetic"}
+{"id": "004", "clause": "Distributor shall sell Manufacturer's products through no other supply partner for this territory.", "expected": "Exclusivity", "source": "synthetic"}
+{"id": "005", "clause": "Supplier shall not approach Customer's clients to offer them replacement services.", "expected": "No-Solicit of Customers", "source": "synthetic"}
+{"id": "006", "clause": "Neither party may seek business from accounts introduced by the other party.", "expected": "No-Solicit of Customers", "source": "synthetic"}
+{"id": "007", "clause": "Client shall not recruit or hire any of Contractor's employees during the engagement.", "expected": "No-Solicit of Employees", "source": "synthetic"}
+{"id": "008", "clause": "Neither party may entice the other party's personnel to leave their employment.", "expected": "No-Solicit of Employees", "source": "synthetic"}
+{"id": "009", "clause": "Neither party shall make statements intended to damage the other's reputation.", "expected": "Non-Disparagement", "source": "synthetic"}
+{"id": "010", "clause": "Vendor must refrain from publicly belittling Customer or its business practices.", "expected": "Non-Disparagement", "source": "synthetic"}
+{"id": "011", "clause": "Either party may terminate this Agreement without cause upon thirty days' written notice.", "expected": "Termination for Convenience", "source": "synthetic"}
+{"id": "012", "clause": "Customer may end the engagement for any reason by notifying Provider ten days in advance.", "expected": "Termination for Convenience", "source": "synthetic"}
+{"id": "013", "clause": "Supplier must obtain Customer's consent before a merger that gives another entity voting control of Supplier.", "expected": "Change of Control", "source": "synthetic"}
+{"id": "014", "clause": "Customer may end this Agreement if a buyer acquires a majority of Provider's shares.", "expected": "Change of Control", "source": "synthetic"}
+{"id": "015", "clause": "Neither party may assign this Agreement to a third party without the other's written approval.", "expected": "Anti-Assignment", "source": "synthetic"}
+{"id": "016", "clause": "A party must notify its counterparty before transferring its contractual rights and duties to another entity.", "expected": "Anti-Assignment", "source": "synthetic"}
+{"id": "017", "clause": "Provider shall remit fifteen percent of receipts from the service to Customer.", "expected": "Revenue/Profit Sharing", "source": "synthetic"}
+{"id": "018", "clause": "The parties shall divide the net earnings from product sales equally.", "expected": "Revenue/Profit Sharing", "source": "synthetic"}
+{"id": "019", "clause": "Supplier may not increase the unit price by more than three percent in any calendar year.", "expected": "Price Restrictions", "source": "synthetic"}
+{"id": "020", "clause": "Reseller must not sell the equipment below the agreed price floor.", "expected": "Price Restrictions", "source": "synthetic"}
+{"id": "021", "clause": "Buyer must purchase at least five hundred units each quarter.", "expected": "Minimum Commitment", "source": "synthetic"}
+{"id": "022", "clause": "Customer shall spend no less than ten thousand dollars on services each year.", "expected": "Minimum Commitment", "source": "synthetic"}
+{"id": "023", "clause": "Usage above ten thousand requests per month incurs an additional fee per request.", "expected": "Volume Restriction", "source": "synthetic"}
+{"id": "024", "clause": "Customer must obtain approval before adding more than two hundred active users.", "expected": "Volume Restriction", "source": "synthetic"}
+{"id": "025", "clause": "All copyright in deliverables created by Consultant shall vest solely in Client.", "expected": "IP Ownership Assignment", "source": "synthetic"}
+{"id": "026", "clause": "Developer hereby transfers ownership of inventions produced under this engagement to Customer.", "expected": "IP Ownership Assignment", "source": "synthetic"}
+{"id": "027", "clause": "The parties shall own jointly all patents arising from their collaborative research.", "expected": "Joint IP Ownership", "source": "synthetic"}
+{"id": "028", "clause": "Each party holds an equal undivided ownership interest in the software they develop together.", "expected": "Joint IP Ownership", "source": "synthetic"}
+{"id": "029", "clause": "Owner authorizes Customer to reproduce the training materials for internal workshops.", "expected": "License Grant", "source": "synthetic"}
+{"id": "030", "clause": "Publisher grants Partner permission to display its photographs in the campaign.", "expected": "License Grant", "source": "synthetic"}
+{"id": "031", "clause": "The existing software license is personal to Customer and may not be transferred to anyone else.", "expected": "Non-Transferable License", "source": "synthetic"}
+{"id": "032", "clause": "Licensee may not convey its licensed usage rights to another entity.", "expected": "Non-Transferable License", "source": "synthetic"}
+{"id": "033", "clause": "The existing license permits use by any number of users without a usage ceiling.", "expected": "Unlimited/All-You-Can-Eat-License", "source": "synthetic"}
+{"id": "034", "clause": "Customer's licensed deployment may cover unlimited installations throughout the enterprise.", "expected": "Unlimited/All-You-Can-Eat-License", "source": "synthetic"}
+{"id": "035", "clause": "The existing license continues forever and cannot be revoked by Licensor.", "expected": "Irrevocable or Perpetual License", "source": "synthetic"}
+{"id": "036", "clause": "Customer's licensed rights survive indefinitely with no end date.", "expected": "Irrevocable or Perpetual License", "source": "synthetic"}
+{"id": "037", "clause": "Developer shall deposit source code with an independent custodian for release to Customer if Developer becomes insolvent.", "expected": "Source Code Escrow", "source": "synthetic"}
+{"id": "038", "clause": "Vendor must lodge the program's source files with an escrow agent who will release them if Vendor ceases business.", "expected": "Source Code Escrow", "source": "synthetic"}
+{"id": "039", "clause": "After this Agreement ends, Provider shall assist migration to a replacement supplier for sixty days.", "expected": "Post-Termination Services", "source": "synthetic"}
+{"id": "040", "clause": "Upon expiry, Vendor shall continue transition support until Customer's data has been exported.", "expected": "Post-Termination Services", "source": "synthetic"}
+{"id": "041", "clause": "Customer may inspect Supplier's books and records to verify compliance with this Agreement.", "expected": "Audit Rights", "source": "synthetic"}
+{"id": "042", "clause": "Provider shall allow Client's independent examiner access to its premises to check contractual performance.", "expected": "Audit Rights", "source": "synthetic"}
+{"id": "043", "clause": "Supplier's liability for breach has no monetary ceiling.", "expected": "Uncapped Liability", "source": "synthetic"}
+{"id": "044", "clause": "Customer may recover the full amount of loss caused by Vendor's breach without any contractual maximum.", "expected": "Uncapped Liability", "source": "synthetic"}
+{"id": "045", "clause": "Each party's total liability for breach shall not exceed the fees paid in the preceding year.", "expected": "Cap on Liability", "source": "synthetic"}
+{"id": "046", "clause": "Claims under this Agreement must be brought within one year after the relevant breach.", "expected": "Cap on Liability", "source": "synthetic"}
+{"id": "047", "clause": "For each day of late delivery, Supplier shall pay the agreed sum of five hundred dollars as liquidated damages.", "expected": "Liquidated Damages", "source": "synthetic"}
+{"id": "048", "clause": "The parties fix compensation for a missed milestone at ten thousand dollars, payable upon that breach.", "expected": "Liquidated Damages", "source": "synthetic"}
+{"id": "049", "clause": "Contractor shall maintain commercial general liability insurance naming Client as an additional insured.", "expected": "Insurance", "source": "synthetic"}
+{"id": "050", "clause": "Vendor must keep a professional indemnity policy in force for Customer's benefit throughout the engagement.", "expected": "Insurance", "source": "synthetic"}

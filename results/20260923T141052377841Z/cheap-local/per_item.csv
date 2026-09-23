@@ -1,0 +1,51 @@
+id,expected,output,parsed,correct,status,error,latency_ms,input_tokens,output_tokens,eval_count,eval_duration,eval_duration_ms,generation_tokens_per_second
+001,Non-Compete,Non-Compete,Non-Compete,True,ok,,13073.665540898219,1463,5,5,68358000,68.358,73.14432838877673
+002,Non-Compete,Non-Compete,Non-Compete,True,ok,,82.9264591448009,1466,5,5,45839000,45.839,109.0774231549554
+003,Exclusivity,Non-Compete,Non-Compete,False,ok,,123.6672499217093,1459,5,5,45335000,45.335,110.29006286533583
+004,Exclusivity,Non-Compete,Non-Compete,False,ok,,82.05095888115466,1462,5,5,45410000,45.41,110.10790574763269
+005,No-Solicit of Customers,Non-Solicit of Customers,,False,parse_error,Output is not an exact allowed category name,114.44333288818598,1459,6,6,74607000,74.607,80.4214081788572
+006,No-Solicit of Customers,Non-Solicit of Customers,,False,parse_error,Output is not an exact allowed category name,98.26991707086563,1459,6,6,58096000,58.096,103.27733406774993
+007,No-Solicit of Employees,Non-Solicit of Employees,,False,parse_error,Output is not an exact allowed category name,94.06745806336403,1461,6,6,56124000,56.124,106.90613641223005
+008,No-Solicit of Employees,Non-Solicit of Employees,,False,parse_error,Output is not an exact allowed category name,92.17979200184345,1461,6,6,55950000,55.95,107.23860589812332
+009,Non-Disparagement,Non-Disparagement,Non-Disparagement,True,ok,,92.3747499473393,1459,6,6,55808000,55.808,107.51146788990825
+010,Non-Disparagement,Non-Disparagement,Non-Disparagement,True,ok,,93.54362497106194,1460,6,6,55686000,55.686,107.74701002047193
+011,Termination for Convenience,Termination for Convenience,Termination for Convenience,True,ok,,80.62787516973913,1461,5,5,44733000,44.733,111.77430532269241
+012,Termination for Convenience,Non-Solicit of Customers,,False,parse_error,Output is not an exact allowed category name,93.99004210717976,1462,6,6,58125000,58.125,103.2258064516129
+013,Change of Control,Non-Compete,Non-Compete,False,ok,,80.48791694454849,1464,5,5,44631000,44.631,112.02975510295535
+014,Change of Control,Non-Compete,Non-Compete,False,ok,,80.9403748717159,1463,5,5,44675000,44.675,111.9194180190263
+015,Anti-Assignment,Non-Assignment,,False,parse_error,Output is not an exact allowed category name,69.81675000861287,1463,4,4,33620000,33.62,118.97679952409281
+016,Anti-Assignment,Non-Transferable License,Non-Transferable License,False,ok,,90.83241689950228,1464,6,6,55588000,55.588,107.93696481254948
+017,Revenue/Profit Sharing,Non-Compete,Non-Compete,False,ok,,82.81783293932676,1460,5,5,44691000,44.691,111.87934930970441
+018,Revenue/Profit Sharing,Non-Compete,Non-Compete,False,ok,,82.52024999819696,1458,5,5,45075000,45.075,110.92623405435386
+019,Price Restrictions,Non-Compete,Non-Compete,False,ok,,80.69808292202652,1463,5,5,44743000,44.743,111.74932391659031
+020,Price Restrictions,Non-Solicit of Customers,,False,parse_error,Output is not an exact allowed category name,97.43449999950826,1459,6,6,55574000,55.574,107.96415590024112
+021,Minimum Commitment,Non-Compete,Non-Compete,False,ok,,82.11300009861588,1458,5,5,44600000,44.6,112.10762331838565
+022,Minimum Commitment,Non-Compete,Non-Compete,False,ok,,82.71208289079368,1460,5,5,44720000,44.72,111.80679785330948
+023,Volume Restriction,Non-Compete,Non-Compete,False,ok,,82.47325010597706,1461,5,5,47131000,47.131,106.08728862107742
+024,Volume Restriction,Non-Compete,Non-Compete,False,ok,,84.52899986878037,1459,5,5,47702000,47.702,104.81740807513312
+025,IP Ownership Assignment,Non-Compete,Non-Compete,False,ok,,92.58799999952316,1460,5,5,53738000,53.738,93.04402843425508
+026,IP Ownership Assignment,Non-Compete,Non-Compete,False,ok,,83.26683402992785,1459,5,5,46245000,46.245,108.11979673478214
+027,Joint IP Ownership,Non-IP Ownership Assignment,,False,parse_error,Output is not an exact allowed category name,96.89370892010629,1459,6,6,58460000,58.46,102.63427984946972
+028,Joint IP Ownership,Non-IP Ownership Assignment,,False,parse_error,Output is not an exact allowed category name,93.44749990850687,1463,6,6,56593000,56.593,106.02017917410281
+029,License Grant,Non-Compete,Non-Compete,False,ok,,83.28962489031255,1459,5,5,44769000,44.769,111.6844244901606
+030,License Grant,Non-Disparagement,Non-Disparagement,False,ok,,96.755167003721,1458,6,6,58091000,58.091,103.2862233392436
+031,Non-Transferable License,Non-Transferable License,Non-Transferable License,True,ok,,94.47783417999744,1463,6,6,58722000,58.722,102.17635639113108
+032,Non-Transferable License,Non-Transferable License,Non-Transferable License,True,ok,,95.5597918946296,1459,6,6,57760000,57.76,103.8781163434903
+033,Unlimited/All-You-Can-Eat-License,Non-Compete,Non-Compete,False,ok,,82.19195785932243,1461,5,5,47730000,47.73,104.75591870940708
+034,Unlimited/All-You-Can-Eat-License,Non-Transferable License,Non-Transferable License,False,ok,,98.12629199586809,1458,6,6,59998000,59.998,100.00333344444815
+035,Irrevocable or Perpetual License,Non-Compete,Non-Compete,False,ok,,86.36845787987113,1459,5,5,46508000,46.508,107.50838565408101
+036,Irrevocable or Perpetual License,Non-Compete,Non-Compete,False,ok,,85.62204102054238,1457,5,5,46852000,46.852,106.71903013745411
+037,Source Code Escrow,Non-Transferable License,Non-Transferable License,False,ok,,94.65750004164875,1466,6,6,56950000,56.95,105.35557506584723
+038,Source Code Escrow,Non-Transferable License,Non-Transferable License,False,ok,,95.5377088394016,1469,6,6,57956000,57.956,103.52681344468218
+039,Post-Termination Services,Non-Compete,Non-Compete,False,ok,,82.94308301992714,1463,5,5,46431000,46.431,107.68667485085396
+040,Post-Termination Services,Non-Transferable License,Non-Transferable License,False,ok,,93.14966597594321,1462,6,6,57890000,57.89,103.64484366902747
+041,Audit Rights,Non-Disparagement,Non-Disparagement,False,ok,,92.644999967888,1461,6,6,57490000,57.49,104.36597669159853
+042,Audit Rights,Non-Disparagement,Non-Disparagement,False,ok,,91.7889999691397,1462,6,6,57025000,57.025,105.2170100832968
+043,Uncapped Liability,Non-Compete,Non-Compete,False,ok,,81.76658395677805,1456,5,5,45297000,45.297,110.38258604322583
+044,Uncapped Liability,Non-Disparagement,Non-Disparagement,False,ok,,90.87854181416333,1464,6,6,55511000,55.511,108.08668552178848
+045,Cap on Liability,Non-Compete,Non-Compete,False,ok,,80.03604179248214,1464,5,5,44788000,44.788,111.63704563722425
+046,Cap on Liability,Non-Compete,Non-Compete,False,ok,,79.83241602778435,1461,5,5,44655000,44.655,111.96954428395476
+047,Liquidated Damages,Non-Compete,Non-Compete,False,ok,,84.45137506350875,1468,5,5,45279000,45.279,110.4264670156143
+048,Liquidated Damages,Non-Compete,Non-Compete,False,ok,,79.92391707375646,1464,5,5,44742000,44.742,111.75182155469135
+049,Insurance,Non-Compete,Non-Compete,False,ok,,80.11949993669987,1461,5,5,44689000,44.689,111.88435632929804
+050,Insurance,Non-Disparagement,Non-Disparagement,False,ok,,91.41041710972786,1464,6,6,55853000,55.853,107.42484736719604
